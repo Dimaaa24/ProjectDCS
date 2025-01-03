@@ -41,12 +41,12 @@
                 <value>0</value>
             </capacity>
         </place>
-        <place id="P_TL_bus">
+        <place id="OP_Bus">
             <graphics>
-                <position x="330.0" y="360.0"/>
+                <position x="285.0" y="360.0"/>
             </graphics>
             <name>
-                <value>P_TL_bus</value>
+                <value>OP_Bus</value>
                 <graphics>
                     <offset x="0.0" y="0.0"/>
                 </graphics>
@@ -61,12 +61,12 @@
                 <value>0</value>
             </capacity>
         </place>
-        <place id="P_TL1">
+        <place id="OP1">
             <graphics>
-                <position x="375.0" y="240.0"/>
+                <position x="330.0" y="255.0"/>
             </graphics>
             <name>
-                <value>P_TL1</value>
+                <value>OP1</value>
                 <graphics>
                     <offset x="0.0" y="0.0"/>
                 </graphics>
@@ -81,12 +81,12 @@
                 <value>0</value>
             </capacity>
         </place>
-        <place id="P_TL2">
+        <place id="OP2">
             <graphics>
                 <position x="525.0" y="285.0"/>
             </graphics>
             <name>
-                <value>P_TL2</value>
+                <value>OP2</value>
                 <graphics>
                     <offset x="0.0" y="0.0"/>
                 </graphics>
@@ -101,12 +101,12 @@
                 <value>0</value>
             </capacity>
         </place>
-        <place id="P_TL3">
+        <place id="OP3">
             <graphics>
                 <position x="540.0" y="375.0"/>
             </graphics>
             <name>
-                <value>P_TL3</value>
+                <value>OP3</value>
                 <graphics>
                     <offset x="0.0" y="0.0"/>
                 </graphics>
@@ -121,12 +121,12 @@
                 <value>0</value>
             </capacity>
         </place>
-        <place id="P_TL4">
+        <place id="OP4">
             <graphics>
                 <position x="255.0" y="435.0"/>
             </graphics>
             <name>
-                <value>P_TL4</value>
+                <value>OP4</value>
                 <graphics>
                     <offset x="0.0" y="0.0"/>
                 </graphics>
@@ -576,8 +576,8 @@
             <tagged>
                 <value>false</value>
             </tagged>
-            <arcpath id="000" x="477" y="507" curvePoint="false"/>
-            <arcpath id="001" x="522" y="507" curvePoint="false"/>
+            <arcpath id="000" x="476" y="507" curvePoint="false"/>
+            <arcpath id="001" x="523" y="508" curvePoint="false"/>
             <arcpath id="002" x="361" y="507" curvePoint="false"/>
             <type value="normal"/>
         </arc>
@@ -620,7 +620,7 @@
             <arcpath id="001" x="661" y="442" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T0 to P_TL_bus" source="T0" target="P_TL_bus">
+        <arc id="T0 to P_TL_bus" source="T0" target="OP_Bus">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -630,10 +630,10 @@
                 <value>false</value>
             </tagged>
             <arcpath id="000" x="416" y="327" curvePoint="false"/>
-            <arcpath id="001" x="354" y="364" curvePoint="false"/>
+            <arcpath id="001" x="311" y="366" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T0 to P_TL1" source="T0" target="P_TL1">
+        <arc id="T0 to P_TL1" source="T0" target="OP1">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -643,10 +643,10 @@
                 <value>false</value>
             </tagged>
             <arcpath id="000" x="431" y="321" curvePoint="false"/>
-            <arcpath id="001" x="395" y="264" curvePoint="false"/>
+            <arcpath id="001" x="354" y="274" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T0 to P_TL2" source="T0" target="P_TL2">
+        <arc id="T0 to P_TL2" source="T0" target="OP2">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -659,7 +659,7 @@
             <arcpath id="001" x="522" y="301" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T0 to P_TL3" source="T0" target="P_TL3">
+        <arc id="T0 to P_TL3" source="T0" target="OP3">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -672,7 +672,7 @@
             <arcpath id="001" x="538" y="379" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T0 to P_TL4" source="T0" target="P_TL4">
+        <arc id="T0 to P_TL4" source="T0" target="OP4">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -694,11 +694,11 @@
             <tagged>
                 <value>false</value>
             </tagged>
-            <arcpath id="000" x="272" y="127" curvePoint="false"/>
-            <arcpath id="001" x="357" y="131" curvePoint="false"/>
+            <arcpath id="000" x="271" y="132" curvePoint="false"/>
+            <arcpath id="001" x="357" y="132" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T1 to P_TL1" source="T1" target="P_TL1">
+        <arc id="T1 to P_TL1" source="T1" target="OP1">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -707,11 +707,11 @@
             <tagged>
                 <value>false</value>
             </tagged>
-            <arcpath id="000" x="271" y="137" curvePoint="false"/>
-            <arcpath id="001" x="376" y="241" curvePoint="false"/>
+            <arcpath id="000" x="267" y="147" curvePoint="false"/>
+            <arcpath id="001" x="334" y="254" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T2 to P_TL1" source="T2" target="P_TL1">
+        <arc id="T2 to P_TL1" source="T2" target="OP1">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -721,7 +721,7 @@
                 <value>false</value>
             </tagged>
             <arcpath id="000" x="456" y="137" curvePoint="false"/>
-            <arcpath id="001" x="394" y="239" curvePoint="false"/>
+            <arcpath id="001" x="351" y="255" curvePoint="false"/>
             <type value="normal"/>
         </arc>
         <arc id="T2 to y1r2r3r4r5" source="T2" target="y1r2r3r4r5">
@@ -737,7 +737,7 @@
             <arcpath id="001" x="537" y="132" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T3 to P_TL1" source="T3" target="P_TL1">
+        <arc id="T3 to P_TL1" source="T3" target="OP1">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -747,10 +747,10 @@
                 <value>false</value>
             </tagged>
             <arcpath id="000" x="651" y="133" curvePoint="false"/>
-            <arcpath id="001" x="400" y="245" curvePoint="false"/>
+            <arcpath id="001" x="355" y="261" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T3 to P_TL2" source="T3" target="P_TL2">
+        <arc id="T3 to P_TL2" source="T3" target="OP2">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -776,7 +776,7 @@
             <arcpath id="001" x="657" y="222" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T4 to P_TL2" source="T4" target="P_TL2">
+        <arc id="T4 to P_TL2" source="T4" target="OP2">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -802,7 +802,7 @@
             <arcpath id="001" x="656" y="372" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T5 to P_TL2" source="T5" target="P_TL2">
+        <arc id="T5 to P_TL2" source="T5" target="OP2">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -815,7 +815,7 @@
             <arcpath id="001" x="546" y="308" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T5 to P_TL3" source="T5" target="P_TL3">
+        <arc id="T5 to P_TL3" source="T5" target="OP3">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -841,7 +841,7 @@
             <arcpath id="001" x="656" y="492" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T6 to P_TL3" source="T6" target="P_TL3">
+        <arc id="T6 to P_TL3" source="T6" target="OP3">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -867,7 +867,7 @@
             <arcpath id="001" x="476" y="507" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T7 to P_TL_bus" source="T7" target="P_TL_bus">
+        <arc id="T7 to P_TL_bus" source="T7" target="OP_Bus">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -877,10 +877,10 @@
                 <value>false</value>
             </tagged>
             <arcpath id="000" x="357" y="492" curvePoint="false"/>
-            <arcpath id="001" x="343" y="386" curvePoint="false"/>
+            <arcpath id="001" x="303" y="385" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T7 to P_TL4" source="T7" target="P_TL4">
+        <arc id="T7 to P_TL4" source="T7" target="OP4">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -906,7 +906,7 @@
             <arcpath id="001" x="191" y="507" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T8 to P_TL_bus" source="T8" target="P_TL_bus">
+        <arc id="T8 to P_TL_bus" source="T8" target="OP_Bus">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
@@ -916,10 +916,10 @@
                 <value>false</value>
             </tagged>
             <arcpath id="000" x="191" y="312" curvePoint="false"/>
-            <arcpath id="001" x="328" y="366" curvePoint="false"/>
+            <arcpath id="001" x="283" y="364" curvePoint="false"/>
             <type value="normal"/>
         </arc>
-        <arc id="T8 to P_TL4" source="T8" target="P_TL4">
+        <arc id="T8 to P_TL4" source="T8" target="OP4">
             <graphics/>
             <inscription>
                 <value>Default,1</value>
