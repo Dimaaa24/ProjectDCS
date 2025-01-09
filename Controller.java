@@ -1,4 +1,4 @@
-package RTS_LAB;
+package Project;
 
 import Components.Activation;
 import Components.Condition;
@@ -6,14 +6,12 @@ import Components.GuardMapping;
 import Components.PetriNet;
 import Components.PetriNetWindow;
 import Components.PetriTransition;
-import DataObjects.DataInteger;
 import DataObjects.DataString;
 import DataObjects.DataTransfer;
 import DataOnly.TransferOperation;
 import Enumerations.LogicConnector;
 import Enumerations.TransitionCondition;
 import Enumerations.TransitionOperation;
-import PetriDataPackage.Guard;
 
 public class Controller {
 	public static void main(String[] args) {
@@ -78,6 +76,38 @@ public class Controller {
 		p9.SetName("g1r2r3y4y5");
 		pn.PlaceList.add(p9);
 
+		DataString pf1  = new DataString();
+		pf1.SetName("P_f1");
+		pn.PlaceList.add(pf1);
+
+		DataString pf2  = new DataString();
+		pf2.SetName("P_f2");
+		pn.PlaceList.add(pf2);
+
+		DataString pf3  = new DataString();
+		pf3.SetName("P_f3");
+		pn.PlaceList.add(pf3);
+
+		DataString pf4  = new DataString();
+		pf4.SetName("P_f4");
+		pn.PlaceList.add(pf4);
+
+		DataString in1 = new DataString();
+		in1.SetName("In1");
+		pn.PlaceList.add(in1);
+
+		DataString in2 = new DataString();
+		in2.SetName("In2");
+		pn.PlaceList.add(in2);
+
+		DataString in3 = new DataString();
+		in3.SetName("In3");
+		pn.PlaceList.add(in3);
+
+		DataString in4 = new DataString();
+		in4.SetName("In4");
+		pn.PlaceList.add(in4);
+
 		DataTransfer p10 = new DataTransfer();
 		p10.SetName("OP1");
 		p10.Value = new TransferOperation("localhost", "1081", "P_TL1");
@@ -134,6 +164,7 @@ public class Controller {
 		GuardMapping grdT1 = new GuardMapping();
 		grdT1.condition = T1C1;
 		grdT1.Activations.add(new Activation(t1, "r1r2r3r4r5", TransitionOperation.Move, "g1r2r3r4r5"));
+		grdT1.Activations.add(new Activation(t1, "r1r2r3r4r5", TransitionOperation.Move, "P_f1"));
 		grdT1.Activations.add(new Activation(t1, "green", TransitionOperation.SendOverNetwork, "OP1"));
 
 		t1.GuardMappingList.add(grdT1);
@@ -282,6 +313,83 @@ public class Controller {
 
 		t9.Delay = 2;
 		pn.Transitions.add(t9);
+
+		// ----------------------------------T_F1-----------------------------------------
+		PetriTransition t_f1 = new PetriTransition(pn);
+		t_f1.TransitionName = "T_F1";
+		t_f1.InputPlaceName.add("P_f1");
+		t_f1.InputPlaceName.add("In1");
+
+		Condition Tf1C1 = new Condition(t_f1, "P_f1", TransitionCondition.NotNull);
+		Condition Tf1C2 = new Condition(t_f1, "In1", TransitionCondition.NotNull);
+		Tf1C1.SetNextCondition(LogicConnector.AND, Tf1C2);
+
+		GuardMapping grdTf1 = new GuardMapping();
+		grdTf1.condition = Tf1C1;
+		grdTf1.Activations.add(new Activation(t_f1, "Ten", TransitionOperation.DynamicDelay, ""));
+
+		t_f1.GuardMappingList.add(grdTf1);
+
+		t_f1.Delay = 0;
+		pn.Transitions.add(t_f1);
+
+		// ----------------------------------T_F2-----------------------------------------
+		PetriTransition t_f2 = new PetriTransition(pn);
+		t_f2.TransitionName = "T_F2";
+		t_f2.InputPlaceName.add("P_f2");
+		t_f2.InputPlaceName.add("In2");
+
+		Condition Tf2C1 = new Condition(t_f2, "P_f2", TransitionCondition.NotNull);
+		Condition Tf2C2 = new Condition(t_f2, "In2", TransitionCondition.NotNull);
+		Tf2C1.SetNextCondition(LogicConnector.AND, Tf2C2);
+
+		GuardMapping grdTf2 = new GuardMapping();
+		grdTf2.condition = Tf2C1;
+		grdTf2.Activations.add(new Activation(t_f2, "Ten", TransitionOperation.DynamicDelay, ""));
+
+		t_f2.GuardMappingList.add(grdTf2);
+
+		t_f2.Delay = 0;
+		pn.Transitions.add(t_f2);
+
+		// ----------------------------------T_F3-----------------------------------------
+		PetriTransition t_f3 = new PetriTransition(pn);
+		t_f3.TransitionName = "T_F3";
+		t_f3.InputPlaceName.add("P_f3");
+		t_f3.InputPlaceName.add("In3");
+		t_f3.IsAsync = true;
+
+		Condition Tf3C1 = new Condition(t_f3, "P_f3", TransitionCondition.NotNull);
+		Condition Tf3C2 = new Condition(t_f3, "In3", TransitionCondition.NotNull);
+		Tf3C1.SetNextCondition(LogicConnector.AND, Tf3C2);
+
+		GuardMapping grdTf3 = new GuardMapping();
+		grdTf3.condition = Tf3C1;
+		grdTf3.Activations.add(new Activation(t_f3, "Ten", TransitionOperation.DynamicDelay, ""));
+
+		t_f3.GuardMappingList.add(grdTf3);
+
+		t_f3.Delay = 2;
+		pn.Transitions.add(t_f3);
+
+		// ----------------------------------T_F4-----------------------------------------
+		PetriTransition t_f4 = new PetriTransition(pn);
+		t_f4.TransitionName = "T_F4";
+		t_f4.InputPlaceName.add("P_f4");
+		t_f4.InputPlaceName.add("In4");
+
+		Condition Tf4C1 = new Condition(t_f4, "P_f4", TransitionCondition.NotNull);
+		Condition Tf4C2 = new Condition(t_f4, "In4", TransitionCondition.NotNull);
+		Tf4C1.SetNextCondition(LogicConnector.AND, Tf4C2);
+
+		GuardMapping grdTf4 = new GuardMapping();
+		grdTf4.condition = Tf4C1;
+		grdTf3.Activations.add(new Activation(t_f4, "Ten", TransitionOperation.DynamicDelay, ""));
+
+		t_f4.GuardMappingList.add(grdTf4);
+
+		t_f4.Delay = 2;
+		pn.Transitions.add(t_f4);
 
 		// ----------------------------------PN START-----------------------------------------
 

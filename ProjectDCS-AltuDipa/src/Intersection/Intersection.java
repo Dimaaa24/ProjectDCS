@@ -1,4 +1,4 @@
-package Project_Int;
+package Project;
 
 import Components.Activation;
 import Components.Condition;
@@ -19,11 +19,11 @@ public class Intersection {
     public static void main(String[] args) {
         PetriNet pn = new PetriNet();
         pn.PetriNetName = "Intersections";
-
-        pn.NetworkPort = 1080;
+        pn.NetworkPort = 1081;
 
         DataCar p1 = new DataCar();
         p1.SetName("P_a1");
+        p1.SetValue(new DataCar());
         pn.PlaceList.add(p1);
 
         DataCar p2 = new DataCar();
@@ -153,25 +153,24 @@ public class Intersection {
         pn.ConstantPlaceList.add(green);
 
         DataTransfer OP1 = new DataTransfer();
-        OP1.SetValue("OP1");
-        OP1.Value = new TransferOperation( "localhost", "1081","IN1");
+        OP1.SetName("OP1");
+        OP1.Value = new TransferOperation( "localhost", "1080","OP1");
         pn.PlaceList.add(OP1);
 
         DataTransfer OP2 = new DataTransfer();
-        OP2.SetValue("OP2");
-        OP2.Value = new TransferOperation("localhost", "1082", "IN2");
+        OP2.SetName("OP2");
+        OP2.Value = new TransferOperation("localhost", "1080", "OP2");
         pn.PlaceList.add(OP2);
 
         DataTransfer OP3 = new DataTransfer();
-        OP3.SetValue("OP3");
-        OP3.Value = new TransferOperation("localhost", "1083", "IN3");
+        OP3.SetName("OP3");
+        OP3.Value = new TransferOperation("localhost", "1080", "OP3");
         pn.PlaceList.add(OP3);
 
         DataTransfer OP4 = new DataTransfer();
-        OP4.SetValue("OP4");
-        OP4.Value = new TransferOperation("localhost", "1084", "IN4");
+        OP4.SetName("OP4");
+        OP4.Value = new TransferOperation("localhost", "1080", "OP4");
         pn.PlaceList.add(OP4);
-
         // T1 ------------------------------------------------
         PetriTransition t1 = new PetriTransition(pn);
         t1.TransitionName = "T_u1";
@@ -530,7 +529,7 @@ public class Intersection {
 
         GuardMapping grdT22 = new GuardMapping();
         grdT22.condition = T22Ct1;
-        grdT22.Activations.add(new Activation(t22, "full", TransitionOperation.SendROverNetwork, "OP1"));
+        grdT22.Activations.add(new Activation(t22, "full", TransitionOperation.SendOverNetwork, "OP1"));
         t22.GuardMappingList.add(grdT22);
 
         t22.Delay = 0;
@@ -549,7 +548,7 @@ public class Intersection {
 
         GuardMapping grdT23 = new GuardMapping();
         grdT23.condition = T23Ct1;
-        grdT23.Activations.add(new Activation(t23, "full", TransitionOperation.SendROverNetwork, "OP2"));
+        grdT23.Activations.add(new Activation(t23, "full", TransitionOperation.SendOverNetwork, "OP2"));
         t23.GuardMappingList.add(grdT23);
 
         t23.Delay = 0;
@@ -568,7 +567,7 @@ public class Intersection {
 
         GuardMapping grdT24 = new GuardMapping();
         grdT24.condition = T24Ct1;
-        grdT24.Activations.add(new Activation(t24, "full", TransitionOperation.SendROverNetwork, "OP3"));
+        grdT24.Activations.add(new Activation(t24, "full", TransitionOperation.SendOverNetwork, "OP3"));
         t24.GuardMappingList.add(grdT24);
 
         t24.Delay = 0;
@@ -587,7 +586,7 @@ public class Intersection {
 
         GuardMapping grdT25 = new GuardMapping();
         grdT25.condition = T25Ct1;
-        grdT25.Activations.add(new Activation(t25, "full", TransitionOperation.SendROverNetwork, "OP4"));
+        grdT25.Activations.add(new Activation(t25, "full", TransitionOperation.SendOverNetwork, "OP4"));
         t25.GuardMappingList.add(grdT25);
 
         t25.Delay = 0;

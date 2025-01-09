@@ -1,4 +1,4 @@
-package RTS_LAB;
+package Project;
 
 import Components.Activation;
 import Components.Condition;
